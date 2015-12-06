@@ -6,7 +6,7 @@
 
 . Fill out the *Project metadata* fields as follows:
 +
-Group:: `io.spring.pivotal`
+Group:: `io.pivotal.spring`
 Artifact:: `hello-spring-boot`
 
 . In the *Dependencies* section, search for `web`, and choose *Web* from the autocomplete menu.
@@ -16,9 +16,9 @@ Unpack that zip file at `$COURSE_HOME/labs/initial`.
 
 . Import the project's `pom.xml` into your editor/IDE of choice.
 
-. Add a `@RestController` annotation to the class `io.pivotal.spring.hello.HelloSpringBootApplication`.
+. Add a `@RestController` annotation to the class `io.pivotal.spring.HelloSpringBootApplication`.
 
-. Add the following request handler to the class `io.pivotal.spring.hello.HelloSpringBootApplication`:
+. Add the following request handler to the class `io.pivotal.spring.HelloSpringBootApplication`:
 +
 [source,java]
 ----
@@ -48,7 +48,7 @@ You should see the application start up an embedded Apache Tomcat server on port
 +
 ----
 2015-12-06 17:17:30.507  INFO 60277 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2015-12-06 17:17:30.511  INFO 60277 --- [           main] io.pivotal.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.201 seconds (JVM running for 3.846)
+2015-12-06 17:17:30.511  INFO 60277 --- [           main] io.pivotal.spring.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.201 seconds (JVM running for 3.846)
 ----
 
 . Visit the application in the browser (http://localhost:8080), and you should see the following:
@@ -105,7 +105,7 @@ You should see the application start up an embedded Jetty server on port 8080:
 +
 ----
 2015-12-06 17:19:11.649  INFO 60588 --- [           main] .s.b.c.e.j.JettyEmbeddedServletContainer : Jetty started on port(s) 8080 (http/1.1)
-2015-12-06 17:19:11.654  INFO 60588 --- [           main] io.pivotal.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.781 seconds (JVM running for 4.217)
+2015-12-06 17:19:11.654  INFO 60588 --- [           main] io.pivotal.spring.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.781 seconds (JVM running for 4.217)
 ----
 
 . Visit the application in the browser (http://localhost:8080), and you should see the following:
@@ -122,14 +122,14 @@ Hello World!
 greeting: Hello
 ----
 
-. To the class `io.pivotal.spring.hello.HelloSpringBootApplication`, add a `greeting` field and inject its value:
+. To the class `io.pivotal.spring.HelloSpringBootApplication`, add a `greeting` field and inject its value:
 +
 ----
 @Value("${greeting}")
 String greeting;
 ----
 
-. Also `io.pivotal.spring.hello.HelloSpringBootApplication`, change the return statement of `hello()` to the following:
+. Also `io.pivotal.spring.HelloSpringBootApplication`, change the return statement of `hello()` to the following:
 +
 ----
 return String.format("%s World!", greeting);
