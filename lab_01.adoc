@@ -8,18 +8,8 @@
 +
 Group:: `io.spring.pivotal`
 Artifact:: `hello-spring-boot`
-Name:: `hello-spring-boot`
-Description:: `Hello Spring Boot`
-Package Name:: `io.pivotal.spring.hello`
-Type:: Maven Project
-Packaging:: Jar
-Java Version:: 1.8
-Language:: Java
-Spring Boot Version 1.2.6
 
-. In the *Project dependencies* section, check the following:
-+
-* Web
+. In the *Dependencies* section, search for `web`, and choose *Web* from the autocomplete menu.
 
 . Click the *Generate Project* button. Your browser will download a zip file.
 Unpack that zip file at `$COURSE_HOME/labs/initial`.
@@ -45,7 +35,7 @@ Spring Boot will embed Apache Tomcat by default.
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -57,8 +47,8 @@ $ java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 You should see the application start up an embedded Apache Tomcat server on port 8080:
 +
 ----
-2015-05-03 13:20:51.690  INFO 2465 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2015-05-03 13:20:51.691  INFO 2465 --- [           main] i.p.s.hello.HelloSpringBootApplication   : Started HelloSpringBootApplication in 3.023 seconds (JVM running for 3.432)
+2015-12-06 17:17:30.507  INFO 60277 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2015-12-06 17:17:30.511  INFO 60277 --- [           main] io.pivotal.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.201 seconds (JVM running for 3.846)
 ----
 
 . Visit the application in the browser (http://localhost:8080), and you should see the following:
@@ -102,7 +92,7 @@ with:
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -114,8 +104,8 @@ $ java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 You should see the application start up an embedded Jetty server on port 8080:
 +
 ----
-2015-05-03 13:26:31.370  INFO 3078 --- [           main] .s.b.c.e.j.JettyEmbeddedServletContainer : Jetty started on port(s) 8080 (http/1.1)
-2015-05-03 13:26:31.371  INFO 3078 --- [           main] i.p.s.hello.HelloSpringBootApplication   : Started HelloSpringBootApplication in 3.671 seconds (JVM running for 4.079)
+2015-12-06 17:19:11.649  INFO 60588 --- [           main] .s.b.c.e.j.JettyEmbeddedServletContainer : Jetty started on port(s) 8080 (http/1.1)
+2015-12-06 17:19:11.654  INFO 60588 --- [           main] io.pivotal.HelloSpringBootApplication    : Started HelloSpringBootApplication in 3.781 seconds (JVM running for 4.217)
 ----
 
 . Visit the application in the browser (http://localhost:8080), and you should see the following:
@@ -148,7 +138,7 @@ return String.format("%s World!", greeting);
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -199,7 +189,7 @@ greeting: Hola
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application, this time setting the `SPRING_PROFILES_ACTIVE` environment variable:
