@@ -18,7 +18,7 @@
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -74,7 +74,7 @@ These will add the project's Maven coordinates to the `/info` endpoint. The Spri
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -87,19 +87,19 @@ $ java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 +
 ----
 {
-  build: {
-    artifact: "hello-spring-boot",
-    name: "hello-spring-boot",
-    description: "Hello Spring Boot",
-    version: "0.0.1-SNAPSHOT"
-  },
-  git: {
-    branch: "master",
-    commit: {
-      id: "a15f771",
-      time: "2015-05-03T16:51:31-0400"
-    }
-  }
+   "git" : {
+      "commit" : {
+         "time" : "2015-12-06T17:25:32-0500",
+         "id" : "78b0e1b"
+      },
+      "branch" : "master"
+   },
+   "build" : {
+      "version" : "0.0.1-SNAPSHOT",
+      "name" : "hello-spring-boot",
+      "artifact" : "hello-spring-boot",
+      "description" : "Demo project for Spring Boot"
+   }
 }
 ----
 
@@ -117,7 +117,7 @@ endpoints:
     sensitive: false
 ----
 
-. Create the class `io.pivotal.spring.hello.FlappingHealthIndicator` and into it paste the following code:
+. Create the class `io.pivotal.spring.FlappingHealthIndicator` and into it paste the following code:
 +
 ----
 @Component
@@ -142,7 +142,7 @@ This demo health indicator will randomize the health check.
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
@@ -174,7 +174,7 @@ $ java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 Spring Boot provides an endpoint (http://localhost:8080/metrics) that exposes several automatically collected metrics for your application.
 It also allows for the creation of custom metrics.
 
-. Create the class `io.pivotal.spring.hello.GreetingService` and into it paste the following code:
+. Create the class `io.pivotal.spring.GreetingService` and into it paste the following code:
 +
 ----
 @Component
@@ -195,7 +195,7 @@ public class GreetingService {
 +
 This class is using the `@Autowired` `CounterService` to count the number of times that the `getGreeting()` method has been invoked.
 
-. Refactor the contents of the class `io.spring.hello.HelloSpringBootApplication`:
+. Refactor the contents of the class `io.pivotal.spring.HelloSpringBootApplication`:
 +
 ----
 @Autowired
@@ -216,7 +216,7 @@ public static void main(String[] args) {
 . Build the application:
 +
 ----
-$ mvn package
+$ ./mvnw package
 ----
 
 . Run the application:
