@@ -18,11 +18,9 @@
 	</modules>
 
 	<parent>
-		<groupId>io.pivotal.spring.cloud</groupId>
-		<artifactId>spring-cloud-services-starter-parent</artifactId>
-		<version>1.0.0.M1</version>
-		<relativePath />
-		<!-- lookup parent from repository -->
+    	<groupId>org.springframework.cloud</groupId>
+    	<artifactId>spring-cloud-starter-parent</artifactId>
+    	<version>Angel.SR4</version>
 	</parent>
 
 	<properties>
