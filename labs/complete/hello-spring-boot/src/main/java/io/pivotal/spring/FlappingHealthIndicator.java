@@ -1,4 +1,4 @@
-package io.pivotal.spring.hello;
+package io.pivotal.spring;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 @Component
-public class FlappingHealthIndicator implements HealthIndicator{
+public class FlappingHealthIndicator implements HealthIndicator {
 
     private Random random = new Random(System.currentTimeMillis());
 

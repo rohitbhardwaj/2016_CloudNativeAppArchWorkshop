@@ -1,4 +1,4 @@
-package io.pivotal.spring.hello;
+package io.pivotal.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
