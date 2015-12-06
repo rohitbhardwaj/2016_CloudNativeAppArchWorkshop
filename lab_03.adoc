@@ -1,5 +1,5 @@
 :compat-mode:
-= Lab 3 - Composing Microservices with Spring Cloud and Netflix OSS
+= Lab 3 - Composing Cloud Native Apps with Spring Cloud and Netflix OSS
 
 In this lab we're going to build a Fortune Teller application from two microservices, one that serves up random Chinese fortune cookie fortunes, and one that presents a user interface.
 The resulting application looks like the following screenshot:
@@ -48,7 +48,7 @@ These properties tell the Config Server to listen on port `8888` and to source i
 . Browse the file https://github.com/mstine/config-repo/blob/master/application.yml#L1-L18.
 These lines tell all applications using the `cloud` Spring profile how to connect to and register themselves with Eureka.
 
-. Right click on `io.spring.cloud.samples.fortuneteller.configserver.Application` and choose *Run As -> Spring Boot App*:
+. In the *Boot Dashboard*, right click on `fortune-teller-config-server` and choose *(Re)start*:
 +
 image::Common/images/sts_run_as_boot.png[width=50%]
 
@@ -84,7 +84,7 @@ eureka:
 +
 These properties tell the Eureka Server to listen on port `8761` and to configure itself in what is essentially ``standalone'' mode.
 
-. As before, right click on `io.spring.cloud.samples.fortuneteller.eureka.Application` and choose *Run As -> Spring Boot App*.
+. As before, in the *Boot Dashboard*, right click on `fortune-teller-eureka` and choose *(Re)start*.
 
 . Browse to http://localhost:8761.
 You should see a UI similar to the following:
@@ -217,12 +217,12 @@ spring:
 spring:
   profiles: cloud
   jpa:
-    database: MYSQL
+    database: POSTGRESQL
 ----
 +
 This configuration specifies the model to DDL setting to be used by Hibernate, as well as the Hibernate dialects to be used for local development and cloud.
 
-. As before, right click on `io.spring.cloud.samples.fortuneteller.fortuneservice.Application` and choose *Run As -> Spring Boot App*.
+. As before, in the *Boot Dashboard*, right click on `fortune-teller-fortune-service` and choose *(Re)start*.
 
 . After the service has been running for ten seconds, refresh your Eureka browser tab.
 You should see a registration entry for the fortune service.
@@ -236,7 +236,7 @@ image::Common/images/fortune_service_output.png[]
 Now that our Fortune microservice is running, we'll begin development of our second microservice.
 The Fortune UI will serve up a AngularJS single page application that consumes the fortune service.
 
-. In the `fortune-teller-ui` module, create the package `io.spring.cloud.samples.fortuneteller.ui.service.fortunes`.
+. In the `fortune-teller-ui` module, create the package `io.spring.cloud.samples.fortuneteller.ui.services.fortunes`.
 This package will contain our integration with the fortune service.
 
 . Create the POJO `io.spring.cloud.samples.fortuneteller.ui.services.fortunes.Fortune`.
@@ -334,7 +334,7 @@ This class provides the REST endpoint that will be consumed by our AngularJS UI.
 ----
 spring:
   application:
-    name: ui  
+    name: ui
 ----
 +
 This configuration specifies the name of the application, which will be used to register the service in Eureka.
@@ -358,7 +358,7 @@ fortunes:
 This configuration instructs the application to listen on port 8081.
 It also provides low cache refresh settings for the Eureka client and Ribbon to make the demo more responsive.
 
-. As before, right click on `io.spring.cloud.samples.fortuneteller.ui.Application` and choose *Run As -> Spring Boot App*.
+. As before, in the *Boot Dashboard*, right click on `fortune-teller-ui` and choose *(Re)start*.
 
 . After the service has been running for ten seconds, refresh your Eureka browser tab.
 You should see a registration entry for the Fortune UI.
@@ -395,7 +395,7 @@ server:
 +
 This configuration instructs the application to listen on port `7979`.
 
-. As before, right click on `io.spring.cloud.samples.fortuneteller.hystrixdashboard.Application` and choose *Run As -> Spring Boot App*.
+. As before, in the *Boot Dashboard*, right click on `fortune-teller-hystrix-dashboard` and choose *(Re)start*.
 
 . Visit http://localhost:7979.
 You should see output similar to the following:
