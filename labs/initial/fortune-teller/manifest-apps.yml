@@ -1,6 +1,7 @@
 ---
 memory: 512M
 instances: 1
+buildpack: java_buildpack
 applications:
 - name: fortune-service
   host: fortunes-${random-word}

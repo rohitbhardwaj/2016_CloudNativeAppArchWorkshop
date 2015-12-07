@@ -1,6 +1,7 @@
 ---
 memory: 384M
 instances: 1
+buildpack: java_buildpack
 applications:
 - name: config-server
   host: config-server-${random-word}
