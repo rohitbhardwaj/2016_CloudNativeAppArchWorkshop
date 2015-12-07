@@ -870,29 +870,26 @@ Let&#8217;s take a look at the environment variables for our application to see 
 </div>
 </li>
 <li>
-<p><strong>(OPTIONAL STEPS)</strong> If you have a PostgreSQL GUI tool handy (you can download a free one at <a href="http://www.pgadmin.org/download" class="bare">http://www.pgadmin.org/download</a>), you can also take a look at the <em>Spring Music</em> data directly in the database.</p>
-</li>
-<li>
-<p>In pgAdmin, create a new server connection and populate the properties with values from the URI in your <code>VCAP_SERVICES</code> environment variable (remember <code>cf env spring-muisc</code>!):</p>
+<p>Let&#8217;s take a direct look at the data in PostgreSQL by utilizing the <code>Manage</code> link in PWS App Manager:</p>
 <div class="imageblock">
 <div class="content">
-<img src="Common/images/pgadmin_props.png" alt="pgadmin props">
+<img src="Common/images/manage-spring-music-db.png" alt="manage spring music db">
 </div>
 </div>
 </li>
 <li>
-<p>Connect to the server and scroll (if necessary) until you find your specific database instance:</p>
+<p>Click on the <strong>Browser</strong> link:</p>
 <div class="imageblock">
 <div class="content">
-<img src="Common/images/pgadmin_db_instance.png" alt="pgadmin db instance">
+<img src="Common/images/manage-spring-music-db-2.png" alt="manage spring music db 2">
 </div>
 </div>
 </li>
 <li>
-<p>Right-click on the <code>album</code> table and choose &#8220;View Data &gt; View All Rows&#8221; to see the data inserted as part of <em>Spring Music</em>'s startup process:</p>
+<p>Paste in the query <code>select * from album;</code> and click <strong>Execute</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<img src="Common/images/pgadmin_table.png" alt="pgadmin table">
+<img src="Common/images/manage-spring-music-db-3.png" alt="manage spring music db 3">
 </div>
 </div>
 </li>
@@ -1056,7 +1053,7 @@ OK</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-21 15:55:18 EDT
+Last updated 2015-12-06 19:54:41 EST
 </div>
 </div>
 </body>

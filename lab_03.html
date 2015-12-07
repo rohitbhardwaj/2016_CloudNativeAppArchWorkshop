@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
-<title>Lab 3 - Composing Microservices with Spring Cloud and Netflix OSS</title>
+<title>Lab 3 - Composing Cloud Native Apps with Spring Cloud and Netflix OSS</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -682,7 +682,7 @@ b.conum * { color: inherit !important; }
 </head>
 <body class="article">
 <div id="header">
-<h1>Lab 3 - Composing Microservices with Spring Cloud and Netflix OSS</h1>
+<h1>Lab 3 - Composing Cloud Native Apps with Spring Cloud and Netflix OSS</h1>
 </div>
 <div id="content">
 <div id="preamble">
@@ -770,7 +770,7 @@ spring:
 These lines tell all applications using the <code>cloud</code> Spring profile how to connect to and register themselves with Eureka.</p>
 </li>
 <li>
-<p>Right click on <code>io.spring.cloud.samples.fortuneteller.configserver.Application</code> and choose <strong>Run As &#8594; Spring Boot App</strong>:</p>
+<p>In the <strong>Boot Dashboard</strong>, right click on <code>fortune-teller-config-server</code> and choose <strong>(Re)start</strong>:</p>
 <div class="imageblock">
 <div class="content">
 <img src="Common/images/sts_run_as_boot.png" alt="sts run as boot" width="50%">
@@ -827,7 +827,7 @@ eureka:
 </div>
 </li>
 <li>
-<p>As before, right click on <code>io.spring.cloud.samples.fortuneteller.eureka.Application</code> and choose <strong>Run As &#8594; Spring Boot App</strong>.</p>
+<p>As before, in the <strong>Boot Dashboard</strong>, right click on <code>fortune-teller-eureka</code> and choose <strong>(Re)start</strong>.</p>
 </li>
 <li>
 <p>Browse to <a href="http://localhost:8761" class="bare">http://localhost:8761</a>.
@@ -963,7 +963,10 @@ The <code>randomFortune</code> method provides a <code>PageRequest</code> to lim
 <div class="content">
 <pre>spring:
   application:
-    name: fortunes</pre>
+    name: fortunes
+  cloud:
+    config:
+      uri: ${vcap.services.config-service.credentials.uri:http://localhost:8888}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -992,7 +995,7 @@ spring:
 spring:
   profiles: cloud
   jpa:
-    database: MYSQL</pre>
+    database: POSTGRESQL</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1000,7 +1003,7 @@ spring:
 </div>
 </li>
 <li>
-<p>As before, right click on <code>io.spring.cloud.samples.fortuneteller.fortuneservice.Application</code> and choose <strong>Run As &#8594; Spring Boot App</strong>.</p>
+<p>As before, in the <strong>Boot Dashboard</strong>, right click on <code>fortune-teller-fortune-service</code> and choose <strong>(Re)start</strong>.</p>
 </li>
 <li>
 <p>After the service has been running for ten seconds, refresh your Eureka browser tab.
@@ -1028,7 +1031,7 @@ The Fortune UI will serve up a AngularJS single page application that consumes t
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In the <code>fortune-teller-ui</code> module, create the package <code>io.spring.cloud.samples.fortuneteller.ui.service.fortunes</code>.
+<p>In the <code>fortune-teller-ui</code> module, create the package <code>io.spring.cloud.samples.fortuneteller.ui.services.fortunes</code>.
 This package will contain our integration with the fortune service.</p>
 </li>
 <li>
@@ -1140,7 +1143,10 @@ public class UiController {
 <div class="content">
 <pre>spring:
   application:
-    name: ui</pre>
+    name: ui
+  cloud:
+    config:
+      uri: ${vcap.services.config-service.credentials.uri:http://localhost:8888}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1170,7 +1176,7 @@ It also provides low cache refresh settings for the Eureka client and Ribbon to 
 </div>
 </li>
 <li>
-<p>As before, right click on <code>io.spring.cloud.samples.fortuneteller.ui.Application</code> and choose <strong>Run As &#8594; Spring Boot App</strong>.</p>
+<p>As before, in the <strong>Boot Dashboard</strong>, right click on <code>fortune-teller-ui</code> and choose <strong>(Re)start</strong>.</p>
 </li>
 <li>
 <p>After the service has been running for ten seconds, refresh your Eureka browser tab.
@@ -1229,7 +1235,7 @@ public String home() {
 </div>
 </li>
 <li>
-<p>As before, right click on <code>io.spring.cloud.samples.fortuneteller.hystrixdashboard.Application</code> and choose <strong>Run As &#8594; Spring Boot App</strong>.</p>
+<p>As before, in the <strong>Boot Dashboard</strong>, right click on <code>fortune-teller-hystrix-dashboard</code> and choose <strong>(Re)start</strong>.</p>
 </li>
 <li>
 <p>Visit <a href="http://localhost:7979" class="bare">http://localhost:7979</a>.
@@ -1256,7 +1262,7 @@ You should see output similar to the following:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-27 22:30:18 EDT
+Last updated 2015-12-06 22:15:30 EST
 </div>
 </div>
 </body>
