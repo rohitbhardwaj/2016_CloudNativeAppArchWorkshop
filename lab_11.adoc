@@ -1,5 +1,5 @@
 :compat-mode:
-= Lab 11 - Push Microservices to Cloud Foundry
+= Lab 11 - Push Cloud Native Apps to Cloud Foundry
 
 == Build and Push!
 
