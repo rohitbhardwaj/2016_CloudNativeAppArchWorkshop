@@ -1,9 +1,9 @@
 slidenumbers: true
 
-# [fit] Architecting for
-# [fit] Continuous Delivery
-# [fit] with
-# [fit] Microservices
+# [fit] Cloud
+# [fit] Native
+# [fit] Application Architecture
+# [fit] Workshop
 ![](https://raw.githubusercontent.com/spring-projects/spring-cloud/gh-pages/img/project-icon-large.png)
 
 ---
@@ -24,8 +24,8 @@ Compliments of Pivotal
 
 ---
 
-# [fit] Continuous Delivery
-# [fit] with Microservices
+# [fit] Cloud Native
+# [fit] Application Architecture
 # [fit] Overview
 
 ---
