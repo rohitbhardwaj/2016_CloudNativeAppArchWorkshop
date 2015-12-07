@@ -1,13 +1,14 @@
 package io.spring.cloud.samples.fortuneteller.fortuneservice.controllers;
 
-import io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune;
-import io.spring.cloud.samples.fortuneteller.fortuneservice.repositories.FortuneRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune;
+import io.spring.cloud.samples.fortuneteller.fortuneservice.repositories.FortuneRepository;
 
 @RestController
 public class FortuneController {
